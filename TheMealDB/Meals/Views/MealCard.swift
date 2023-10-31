@@ -8,8 +8,28 @@
 import SwiftUI
 
 struct MealCard: View {
+    @State var isAnimating: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Image(systemName: "home")
+            VStack {
+                Spacer()
+                Text("Hello, World!")
+                Button {
+                    
+                } label: {
+                    Text("Add")
+                }
+                .padding()
+            }
+        }
+        .background(
+            RoundedRectangle(cornerRadius: 25.0)
+                .background(
+                    isAnimating ? Color.red : Color.blue
+                )
+        )
     }
 }
 

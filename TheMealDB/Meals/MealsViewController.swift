@@ -1,5 +1,5 @@
 //
-//  MealViewController.swift
+//  MealsViewController.swift
 //  TheMealDB
 //
 //  Created by Bryan A Bolivar M on 30/10/23.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MealViewController: UIViewController {
+class MealsViewController: UIViewController {
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -16,10 +16,10 @@ class MealViewController: UIViewController {
     }
 
     // MARK: - Properties
-    var presenter: ViewToPresenterMealProtocol?
+    var presenter: ViewToPresenterMealsProtocol?
     
 }
 
-extension MealViewController: PresenterToViewMealProtocol{
+extension MealsViewController: PresenterToViewMealsProtocol{
     // TODO: Implement View Output Methods
 }
