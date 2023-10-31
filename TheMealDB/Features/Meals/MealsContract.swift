@@ -11,7 +11,8 @@ import Foundation
 
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewMealsProtocol {
-   
+    func reloadCategoriesSection(with categories: [MealCategory])
+    func presentError(_ error: Error)
 }
 
 
@@ -21,6 +22,8 @@ protocol ViewToPresenterMealsProtocol {
     var view: PresenterToViewMealsProtocol? { get set }
     var interactor: PresenterToInteractorMealsProtocol? { get set }
     var router: PresenterToRouterMealsProtocol? { get set }
+    
+    func fetchCategories()
 }
 
 
@@ -28,12 +31,15 @@ protocol ViewToPresenterMealsProtocol {
 protocol PresenterToInteractorMealsProtocol {
     
     var presenter: InteractorToPresenterMealsProtocol? { get set }
+ 
+    func fetchCategories()
 }
 
 
 // MARK: Interactor Output (Interactor -> Presenter)
 protocol InteractorToPresenterMealsProtocol {
-    
+    func didFetchCategories(categories: [MealCategory])
+    func didFailFetchingCategories(with error: Error)
 }
 
 
