@@ -41,9 +41,9 @@ extension MealsViewController: PresenterToViewMealsProtocol {
         print(categories)
     }
     
-    func presentError(_ error: Error) {
+    func presentError(_ error: TheMovieAPIError) {
         let alert = UIAlertController(title: "Error",
-                                      message: error.localizedDescription,
+                                      message: error.rawValue,
                                       preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default)
         alert.addAction(action)

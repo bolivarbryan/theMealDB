@@ -26,7 +26,7 @@ extension MealsPresenter: InteractorToPresenterMealsProtocol {
         view?.reloadCategoriesSection(with: categories)
     }
     
-    func didFailFetchingCategories(with error: Error) {
+    func didFailFetchingCategories(with error: TheMovieAPIError) {
         view?.presentError(error)
     }
     

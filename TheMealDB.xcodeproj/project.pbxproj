@@ -14,6 +14,11 @@
 		615E59F72AF0BF0F00136D68 /* MealsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615E59F22AF0BF0F00136D68 /* MealsRouter.swift */; };
 		615E59F82AF0BF0F00136D68 /* MealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615E59F32AF0BF0F00136D68 /* MealsViewController.swift */; };
 		615E59F92AF0BF0F00136D68 /* MealsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615E59F42AF0BF0F00136D68 /* MealsInteractor.swift */; };
+		615E5A002AF0D11000136D68 /* TheMealDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615E59FF2AF0D10F00136D68 /* TheMealDBAPI.swift */; };
+		615E5A032AF0D1F700136D68 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 615E5A022AF0D1F700136D68 /* CombineMoya */; };
+		615E5A052AF0D1F700136D68 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 615E5A042AF0D1F700136D68 /* Moya */; };
+		615E5A072AF0DB5D00136D68 /* TheMovieAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615E5A062AF0DB5D00136D68 /* TheMovieAPIError.swift */; };
+		615E5A092AF0DB7100136D68 /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615E5A082AF0DB7100136D68 /* CategoriesResponse.swift */; };
 		61995A5B2AEF8CCD0085723F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61995A5A2AEF8CCD0085723F /* AppDelegate.swift */; };
 		61995A5D2AEF8CCD0085723F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61995A5C2AEF8CCD0085723F /* SceneDelegate.swift */; };
 		61995A622AEF8CCD0085723F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61995A602AEF8CCD0085723F /* Main.storyboard */; };
@@ -51,6 +56,9 @@
 		615E59F22AF0BF0F00136D68 /* MealsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsRouter.swift; sourceTree = "<group>"; };
 		615E59F32AF0BF0F00136D68 /* MealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewController.swift; sourceTree = "<group>"; };
 		615E59F42AF0BF0F00136D68 /* MealsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsInteractor.swift; sourceTree = "<group>"; };
+		615E59FF2AF0D10F00136D68 /* TheMealDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBAPI.swift; sourceTree = "<group>"; };
+		615E5A062AF0DB5D00136D68 /* TheMovieAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieAPIError.swift; sourceTree = "<group>"; };
+		615E5A082AF0DB7100136D68 /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
 		61995A572AEF8CCD0085723F /* TheMealDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMealDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61995A5A2AEF8CCD0085723F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61995A5C2AEF8CCD0085723F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				615E5A052AF0D1F700136D68 /* Moya in Frameworks */,
+				615E5A032AF0D1F700136D68 /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +119,16 @@
 			path = Features;
 			sourceTree = "<group>";
 		};
+		615E59FE2AF0D0FE00136D68 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				615E59FF2AF0D10F00136D68 /* TheMealDBAPI.swift */,
+				615E5A062AF0DB5D00136D68 /* TheMovieAPIError.swift */,
+				615E5A082AF0DB7100136D68 /* CategoriesResponse.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		61995A4E2AEF8CCD0085723F = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +152,7 @@
 		61995A592AEF8CCD0085723F /* TheMealDB */ = {
 			isa = PBXGroup;
 			children = (
+				615E59FE2AF0D0FE00136D68 /* API */,
 				615E59FA2AF0C0BC00136D68 /* Features */,
 				615E59EB2AF0BDE900136D68 /* Models */,
 				61995A5A2AEF8CCD0085723F /* AppDelegate.swift */,
@@ -199,6 +220,10 @@
 			dependencies = (
 			);
 			name = TheMealDB;
+			packageProductDependencies = (
+				615E5A022AF0D1F700136D68 /* CombineMoya */,
+				615E5A042AF0D1F700136D68 /* Moya */,
+			);
 			productName = TheMealDB;
 			productReference = 61995A572AEF8CCD0085723F /* TheMealDB.app */;
 			productType = "com.apple.product-type.application";
@@ -271,6 +296,9 @@
 				Base,
 			);
 			mainGroup = 61995A4E2AEF8CCD0085723F;
+			packageReferences = (
+				615E5A012AF0D1F700136D68 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 61995A582AEF8CCD0085723F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -323,7 +351,10 @@
 				615E59F72AF0BF0F00136D68 /* MealsRouter.swift in Sources */,
 				61995A5B2AEF8CCD0085723F /* AppDelegate.swift in Sources */,
 				615E59F52AF0BF0F00136D68 /* MealsContract.swift in Sources */,
+				615E5A002AF0D11000136D68 /* TheMealDBAPI.swift in Sources */,
+				615E5A072AF0DB5D00136D68 /* TheMovieAPIError.swift in Sources */,
 				615E59F62AF0BF0F00136D68 /* MealsPresenter.swift in Sources */,
+				615E5A092AF0DB7100136D68 /* CategoriesResponse.swift in Sources */,
 				61995A5D2AEF8CCD0085723F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -671,6 +702,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		615E5A012AF0D1F700136D68 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		615E5A022AF0D1F700136D68 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 615E5A012AF0D1F700136D68 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		615E5A042AF0D1F700136D68 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 615E5A012AF0D1F700136D68 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		61995A632AEF8CCD0085723F /* TheMealDB.xcdatamodeld */ = {

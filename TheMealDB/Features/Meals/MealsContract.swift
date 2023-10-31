@@ -12,7 +12,7 @@ import Foundation
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewMealsProtocol {
     func reloadCategoriesSection(with categories: [MealCategory])
-    func presentError(_ error: Error)
+    func presentError(_ error: TheMovieAPIError)
 }
 
 
@@ -39,7 +39,7 @@ protocol PresenterToInteractorMealsProtocol {
 // MARK: Interactor Output (Interactor -> Presenter)
 protocol InteractorToPresenterMealsProtocol {
     func didFetchCategories(categories: [MealCategory])
-    func didFailFetchingCategories(with error: Error)
+    func didFailFetchingCategories(with error: TheMovieAPIError)
 }
 
 

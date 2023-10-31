@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Moya
 
 class MealsInteractor: PresenterToInteractorMealsProtocol {
     
@@ -14,24 +15,27 @@ class MealsInteractor: PresenterToInteractorMealsProtocol {
     var presenter: InteractorToPresenterMealsProtocol?
     
     func fetchCategories() {
-        presenter?.didFetchCategories(categories: [MealCategory(id: "1",
-                                                                name: "Beef",
-                                                                thumbnail: "",
-                                                                description: "")]
-        )
-        
-        presenter?.didFailFetchingCategories(with: XMLParsingError(line: 1, column: 1, kind: .internalError))
+        let provider = MoyaProvider<TheMealDBAPI>()
+        provider.request(.fetchCategories) { [weak self] result in
+            switch result {
+            case let .success(moyaResponse):
+                let data = moyaResponse.data
+                let statusCode = moyaResponse.statusCode
+                do {
+                    let categoriesResponse = try JSONDecoder().decode(CategoriesResponse.self, from: data)
+                    DispatchQueue.main.async {
+                        self?.presenter?.didFetchCategories(categories: categoriesResponse.categories)
+                    }
+                } catch {
+                    DispatchQueue.main.async {
+                        self?.presenter?.didFailFetchingCategories(with: TheMovieAPIError.decodingError)
+                    }
+                }
+            case .failure:
+                DispatchQueue.main.async {
+                    self?.presenter?.didFailFetchingCategories(with: .internalError)
+                }
+            }
+        }
     }
-}
-
-struct XMLParsingError: Error {
-    enum ErrorKind {
-        case invalidCharacter
-        case mismatchedTag
-        case internalError
-    }
-    
-    let line: Int
-    let column: Int
-    let kind: ErrorKind
 }
