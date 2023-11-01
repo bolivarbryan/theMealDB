@@ -8,20 +8,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Meals View Controller-->
+        <!--TMDB-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MealsViewController" customModule="TheMealDB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="TMDB" id="BYZ-38-t0r" customClass="MealsViewController" customModule="TheMealDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3he-nl-Ib9">
+                                <rect key="frame" x="0.0" y="60" width="393" height="792"/>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3he-nl-Ib9" secondAttribute="trailing" id="FlJ-La-PfE"/>
+                            <constraint firstItem="3he-nl-Ib9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KyC-8h-ssA"/>
+                            <constraint firstItem="3he-nl-Ib9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="60" id="SLK-q3-KoQ"/>
+                            <constraint firstAttribute="bottom" secondItem="3he-nl-Ib9" secondAttribute="bottom" id="aGo-pK-MrK"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="yX6-0M-fY1"/>
+                    <connections>
+                        <outlet property="verticalStackView" destination="3he-nl-Ib9" id="vvf-FA-JfB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="-2"/>
+            <point key="canvasLocation" x="1064.885496183206" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>

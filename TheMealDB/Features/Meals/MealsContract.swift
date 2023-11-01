@@ -24,6 +24,7 @@ protocol ViewToPresenterMealsProtocol {
     var router: PresenterToRouterMealsProtocol? { get set }
     
     func fetchCategories()
+    func selectCategory(_ category: MealCategory)
 }
 
 
@@ -33,6 +34,7 @@ protocol PresenterToInteractorMealsProtocol {
     var presenter: InteractorToPresenterMealsProtocol? { get set }
  
     func fetchCategories()
+    func selectCategory(_ category: MealCategory)
 }
 
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MealsPresenter: ViewToPresenterMealsProtocol {
+class MealsPresenter: ViewToPresenterMealsProtocol, ObservableObject {
 
     // MARK: Properties
     var view: PresenterToViewMealsProtocol?
@@ -17,6 +17,10 @@ class MealsPresenter: ViewToPresenterMealsProtocol {
     
     func fetchCategories() {
         interactor?.fetchCategories()
+    }
+    
+    func selectCategory(_ category: MealCategory) {
+        
     }
     
 }

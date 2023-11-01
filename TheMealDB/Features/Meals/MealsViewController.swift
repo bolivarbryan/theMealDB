@@ -7,24 +7,34 @@
 //
 
 import UIKit
+import SnapKit
+import SwiftUI
 
 class MealsViewController: UIViewController {
-    
+    // MARK: - Properties
+    var presenter: ViewToPresenterMealsProtocol?
+    private var header = PickerView()
+
+    @IBOutlet weak var verticalStackView: UIStackView!
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
         configureModule()
+        title = "TMDB"
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        addCategoriesPicker()
+    }
+    
+    func addCategoriesPicker() {
+        verticalStackView.addArrangedSubview(header)
+        verticalStackView.addArrangedSubview(UIView())
+        header.delegate = self
         presenter?.fetchCategories()
     }
 
-    // MARK: - Properties
-    var presenter: ViewToPresenterMealsProtocol?
-    
     func configureModule() {
         let presenterObject: ViewToPresenterMealsProtocol & InteractorToPresenterMealsProtocol = MealsPresenter()
         presenter = presenterObject
@@ -38,7 +48,9 @@ class MealsViewController: UIViewController {
 
 extension MealsViewController: PresenterToViewMealsProtocol {
     func reloadCategoriesSection(with categories: [MealCategory]) {
-        print(categories)
+        header.setOptions(categories)
+        view.layoutIfNeeded()
+        view.layoutSubviews()
     }
     
     func presentError(_ error: TheMovieAPIError) {
@@ -48,5 +60,16 @@ extension MealsViewController: PresenterToViewMealsProtocol {
         let action = UIAlertAction(title: "Ok", style: .default)
         alert.addAction(action)
         present(alert, animated: true)
+    }
+}
+
+
+extension MealsViewController: PickerViewDelegate {
+    func didPressHeader() {
+        presenter?.fetchCategories()
+    }
+    
+    func didSelectOption(_ option: String) {
+        //Reload Meals Data
     }
 }

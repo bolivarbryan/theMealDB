@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct MealCategory: Codable {
-    let id: String
+struct MealCategory: Codable, Identifiable {
+    var id: String
     let name: String
     let thumbnail: String
     let description: String
@@ -18,5 +18,11 @@ struct MealCategory: Codable {
         case name = "strCategory"
         case thumbnail = "strCategoryThumb"
         case description = "strCategoryDescription"
+    }
+}
+
+extension MealCategory: Optionable {
+    var optionValue: String {
+        return name
     }
 }

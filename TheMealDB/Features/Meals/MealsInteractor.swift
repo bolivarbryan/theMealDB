@@ -20,7 +20,6 @@ class MealsInteractor: PresenterToInteractorMealsProtocol {
             switch result {
             case let .success(moyaResponse):
                 let data = moyaResponse.data
-                let statusCode = moyaResponse.statusCode
                 do {
                     let categoriesResponse = try JSONDecoder().decode(CategoriesResponse.self, from: data)
                     DispatchQueue.main.async {
@@ -37,5 +36,9 @@ class MealsInteractor: PresenterToInteractorMealsProtocol {
                 }
             }
         }
+    }
+    
+    func selectCategory(_ category: MealCategory) {
+        //TODO: Fetch Meals for this category
     }
 }

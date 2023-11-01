@@ -19,6 +19,7 @@
 		615E5A052AF0D1F700136D68 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 615E5A042AF0D1F700136D68 /* Moya */; };
 		615E5A072AF0DB5D00136D68 /* TheMovieAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615E5A062AF0DB5D00136D68 /* TheMovieAPIError.swift */; };
 		615E5A092AF0DB7100136D68 /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615E5A082AF0DB7100136D68 /* CategoriesResponse.swift */; };
+		615E5A0E2AF0E0A900136D68 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 615E5A0D2AF0E0A900136D68 /* SnapKit */; };
 		61995A5B2AEF8CCD0085723F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61995A5A2AEF8CCD0085723F /* AppDelegate.swift */; };
 		61995A5D2AEF8CCD0085723F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61995A5C2AEF8CCD0085723F /* SceneDelegate.swift */; };
 		61995A622AEF8CCD0085723F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61995A602AEF8CCD0085723F /* Main.storyboard */; };
@@ -28,7 +29,10 @@
 		61995A752AEF8CCE0085723F /* TheMealDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61995A742AEF8CCE0085723F /* TheMealDBTests.swift */; };
 		61995A7F2AEF8CCE0085723F /* TheMealDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61995A7E2AEF8CCE0085723F /* TheMealDBUITests.swift */; };
 		61995A812AEF8CCE0085723F /* TheMealDBUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61995A802AEF8CCE0085723F /* TheMealDBUITestsLaunchTests.swift */; };
-		61995A9A2AEF91EA0085723F /* MealCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61995A992AEF91EA0085723F /* MealCard.swift */; };
+		61D0E8762AF2C28400711B63 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0E8752AF2C28400711B63 /* PickerView.swift */; };
+		61D0E8782AF2C6DA00711B63 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0E8772AF2C6DA00711B63 /* OptionsView.swift */; };
+		61D0E87C2AF3009B00711B63 /* TMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0E87B2AF3009B00711B63 /* TMButton.swift */; };
+		61D0E8812AF3017200711B63 /* Optionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0E8802AF3017200711B63 /* Optionable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +76,10 @@
 		61995A7A2AEF8CCE0085723F /* TheMealDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMealDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61995A7E2AEF8CCE0085723F /* TheMealDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBUITests.swift; sourceTree = "<group>"; };
 		61995A802AEF8CCE0085723F /* TheMealDBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		61995A992AEF91EA0085723F /* MealCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCard.swift; sourceTree = "<group>"; };
+		61D0E8752AF2C28400711B63 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		61D0E8772AF2C6DA00711B63 /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
+		61D0E87B2AF3009B00711B63 /* TMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMButton.swift; sourceTree = "<group>"; };
+		61D0E8802AF3017200711B63 /* Optionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optionable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				615E5A0E2AF0E0A900136D68 /* SnapKit in Frameworks */,
 				615E5A052AF0D1F700136D68 /* Moya in Frameworks */,
 				615E5A032AF0D1F700136D68 /* CombineMoya in Frameworks */,
 			);
@@ -152,9 +160,9 @@
 		61995A592AEF8CCD0085723F /* TheMealDB */ = {
 			isa = PBXGroup;
 			children = (
+				61D0E8792AF3008600711B63 /* Core */,
 				615E59FE2AF0D0FE00136D68 /* API */,
 				615E59FA2AF0C0BC00136D68 /* Features */,
-				615E59EB2AF0BDE900136D68 /* Models */,
 				61995A5A2AEF8CCD0085723F /* AppDelegate.swift */,
 				61995A5C2AEF8CCD0085723F /* SceneDelegate.swift */,
 				61995A602AEF8CCD0085723F /* Main.storyboard */,
@@ -186,7 +194,6 @@
 		61995A972AEF8E920085723F /* Meals */ = {
 			isa = PBXGroup;
 			children = (
-				61995A982AEF91840085723F /* Views */,
 				615E59F02AF0BF0F00136D68 /* MealsContract.swift */,
 				615E59F12AF0BF0F00136D68 /* MealsPresenter.swift */,
 				615E59F22AF0BF0F00136D68 /* MealsRouter.swift */,
@@ -196,12 +203,32 @@
 			path = Meals;
 			sourceTree = "<group>";
 		};
-		61995A982AEF91840085723F /* Views */ = {
+		61D0E8792AF3008600711B63 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				61995A992AEF91EA0085723F /* MealCard.swift */,
+				615E59EB2AF0BDE900136D68 /* Models */,
+				61D0E87F2AF3016500711B63 /* Protocols */,
+				61D0E87A2AF3008A00711B63 /* Components */,
 			);
-			path = Views;
+			path = Core;
+			sourceTree = "<group>";
+		};
+		61D0E87A2AF3008A00711B63 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				61D0E87B2AF3009B00711B63 /* TMButton.swift */,
+				61D0E8772AF2C6DA00711B63 /* OptionsView.swift */,
+				61D0E8752AF2C28400711B63 /* PickerView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		61D0E87F2AF3016500711B63 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				61D0E8802AF3017200711B63 /* Optionable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +250,7 @@
 			packageProductDependencies = (
 				615E5A022AF0D1F700136D68 /* CombineMoya */,
 				615E5A042AF0D1F700136D68 /* Moya */,
+				615E5A0D2AF0E0A900136D68 /* SnapKit */,
 			);
 			productName = TheMealDB;
 			productReference = 61995A572AEF8CCD0085723F /* TheMealDB.app */;
@@ -298,6 +326,7 @@
 			mainGroup = 61995A4E2AEF8CCD0085723F;
 			packageReferences = (
 				615E5A012AF0D1F700136D68 /* XCRemoteSwiftPackageReference "Moya" */,
+				615E5A0C2AF0E0A900136D68 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 61995A582AEF8CCD0085723F /* Products */;
 			projectDirPath = "";
@@ -344,10 +373,12 @@
 			files = (
 				615E59F82AF0BF0F00136D68 /* MealsViewController.swift in Sources */,
 				615E59F92AF0BF0F00136D68 /* MealsInteractor.swift in Sources */,
-				61995A9A2AEF91EA0085723F /* MealCard.swift in Sources */,
+				61D0E8812AF3017200711B63 /* Optionable.swift in Sources */,
 				61995A652AEF8CCD0085723F /* TheMealDB.xcdatamodeld in Sources */,
+				61D0E8782AF2C6DA00711B63 /* OptionsView.swift in Sources */,
 				615E59ED2AF0BDFC00136D68 /* Meal.swift in Sources */,
 				615E59EF2AF0BE1000136D68 /* MealCategory.swift in Sources */,
+				61D0E87C2AF3009B00711B63 /* TMButton.swift in Sources */,
 				615E59F72AF0BF0F00136D68 /* MealsRouter.swift in Sources */,
 				61995A5B2AEF8CCD0085723F /* AppDelegate.swift in Sources */,
 				615E59F52AF0BF0F00136D68 /* MealsContract.swift in Sources */,
@@ -355,6 +386,7 @@
 				615E5A072AF0DB5D00136D68 /* TheMovieAPIError.swift in Sources */,
 				615E59F62AF0BF0F00136D68 /* MealsPresenter.swift in Sources */,
 				615E5A092AF0DB7100136D68 /* CategoriesResponse.swift in Sources */,
+				61D0E8762AF2C28400711B63 /* PickerView.swift in Sources */,
 				61995A5D2AEF8CCD0085723F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -712,6 +744,14 @@
 				minimumVersion = 15.0.3;
 			};
 		};
+		615E5A0C2AF0E0A900136D68 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -724,6 +764,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 615E5A012AF0D1F700136D68 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		615E5A0D2AF0E0A900136D68 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 615E5A0C2AF0E0A900136D68 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 
