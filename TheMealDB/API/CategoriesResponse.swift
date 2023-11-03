@@ -11,3 +11,6 @@ struct CategoriesResponse: Codable {
     let categories: [MealCategory]
 }
 
+struct MealsResponse: Codable {
+    let meals: [Meal]
+}

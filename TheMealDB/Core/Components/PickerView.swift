@@ -11,7 +11,7 @@ import SwiftUI
 
 protocol PickerViewDelegate {
     func didPressHeader()
-    func didSelectOption(_ option: String)
+    func didSelectOption(_ option: Optionable)
 }
 
 class PickerView: UIView {
@@ -26,7 +26,7 @@ class PickerView: UIView {
         let button = makeHeaderButton()
         let listView = OptionsView(datasource: datasource,
                                    selectionAction: {
-            self.delegate?.didSelectOption($0.optionValue)
+            self.delegate?.didSelectOption($0)
             button.setTitle($0.optionValue, for: .normal)
             self.toggleSelection(shouldHide: true)
         })

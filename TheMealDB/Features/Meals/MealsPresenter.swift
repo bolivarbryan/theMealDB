@@ -19,8 +19,8 @@ class MealsPresenter: ViewToPresenterMealsProtocol, ObservableObject {
         interactor?.fetchCategories()
     }
     
-    func selectCategory(_ category: MealCategory) {
-        
+    func selectCategory(_ category: String) {
+        interactor?.fetchMeals(category)
     }
     
 }
@@ -34,5 +34,8 @@ extension MealsPresenter: InteractorToPresenterMealsProtocol {
         view?.presentError(error)
     }
     
+    func didFetchMeals(meals: [Meal]) {
+        view?.reloadMeals(with: meals)
+    }
     
 }

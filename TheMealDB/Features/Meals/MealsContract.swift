@@ -13,6 +13,7 @@ import Foundation
 protocol PresenterToViewMealsProtocol {
     func reloadCategoriesSection(with categories: [MealCategory])
     func presentError(_ error: TheMovieAPIError)
+    func reloadMeals(with meals: [Meal])
 }
 
 
@@ -24,7 +25,7 @@ protocol ViewToPresenterMealsProtocol {
     var router: PresenterToRouterMealsProtocol? { get set }
     
     func fetchCategories()
-    func selectCategory(_ category: MealCategory)
+    func selectCategory(_ category: String)
 }
 
 
@@ -34,7 +35,7 @@ protocol PresenterToInteractorMealsProtocol {
     var presenter: InteractorToPresenterMealsProtocol? { get set }
  
     func fetchCategories()
-    func selectCategory(_ category: MealCategory)
+    func fetchMeals(_ category: String)
 }
 
 
@@ -42,6 +43,7 @@ protocol PresenterToInteractorMealsProtocol {
 protocol InteractorToPresenterMealsProtocol {
     func didFetchCategories(categories: [MealCategory])
     func didFailFetchingCategories(with error: TheMovieAPIError)
+    func didFetchMeals(meals: [Meal])
 }
 
 

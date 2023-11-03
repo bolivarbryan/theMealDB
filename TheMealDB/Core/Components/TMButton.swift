@@ -25,8 +25,8 @@ class TMButton: UIButton {
             backgroundColor = .clear
         case .bubble:
             self.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-            self.setTitleColor(.white, for: .normal)
-            backgroundColor = .blue
+            self.setTitleColor(.blue, for: .normal)
+            backgroundColor = .yellow
             layer.cornerRadius = 10
             clipsToBounds = true
         }

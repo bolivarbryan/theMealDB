@@ -38,7 +38,28 @@ class MealsInteractor: PresenterToInteractorMealsProtocol {
         }
     }
     
-    func selectCategory(_ category: MealCategory) {
-        //TODO: Fetch Meals for this category
+    func fetchMeals(_ category: String) {
+        let provider = MoyaProvider<TheMealDBAPI>()
+        provider.request(.fetchMeals(category: category)) { [weak self] result in
+            switch result {
+            case let .success(moyaResponse):
+                let data = moyaResponse.data
+                do {
+                    let mealsResponse = try JSONDecoder().decode(MealsResponse.self, from: data)
+                    DispatchQueue.main.async {
+                        self?.presenter?.didFetchMeals(meals: mealsResponse.meals)
+                    }
+                } catch {
+                    DispatchQueue.main.async {
+                        self?.presenter?.didFailFetchingCategories(with: TheMovieAPIError.decodingError)
+                    }
+                }
+            case .failure:
+                DispatchQueue.main.async {
+                    self?.presenter?.didFailFetchingCategories(with: .internalError)
+                }
+            }
+        }
     }
 }
+
