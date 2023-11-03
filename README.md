@@ -3,9 +3,9 @@
 ## Checklist
 
 - [x] Define base project
-- [ ] List Dependencies
-- [ ] List Meal Categories
-- [ ] Load Meals per Category
+- [x] List Dependencies
+- [x] List Meal Categories
+- [x] Load Meals per Category
 - [ ] Add Meal Pricing Feature
 - [ ] Add Cart Module
 - [ ] Add Checkout Flow
