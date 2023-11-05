@@ -6,7 +6,7 @@
 - [x] List Dependencies
 - [x] List Meal Categories
 - [x] Load Meals per Category
-- [ ] Add Meal Pricing Feature
+- [x] Add Meal Pricing Feature
 - [ ] Add Cart Module
 - [ ] Add Checkout Flow
 - [ ] Add Loading Animations

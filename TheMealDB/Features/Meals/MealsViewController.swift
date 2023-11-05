@@ -82,7 +82,6 @@ class MealsViewController: UIViewController {
         presenter?.view = self
         presenter?.interactor?.presenter = presenterObject
     }
-    
 }
 
 extension MealsViewController: PresenterToViewMealsProtocol {

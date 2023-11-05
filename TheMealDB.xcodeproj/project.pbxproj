@@ -35,6 +35,8 @@
 		61D0E8812AF3017200711B63 /* Optionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0E8802AF3017200711B63 /* Optionable.swift */; };
 		61D0E8872AF52B9500711B63 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0E8862AF52B9500711B63 /* GridCollectionViewCell.swift */; };
 		61D0E88A2AF52D0A00711B63 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 61D0E8892AF52D0A00711B63 /* Kingfisher */; };
+		61D0E88C2AF833C500711B63 /* PriceGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0E88B2AF833C500711B63 /* PriceGeneratorTests.swift */; };
+		61D0E8902AF8411F00711B63 /* PriceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0E88F2AF8411F00711B63 /* PriceType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		61D0E87B2AF3009B00711B63 /* TMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMButton.swift; sourceTree = "<group>"; };
 		61D0E8802AF3017200711B63 /* Optionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optionable.swift; sourceTree = "<group>"; };
 		61D0E8862AF52B9500711B63 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
+		61D0E88B2AF833C500711B63 /* PriceGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceGeneratorTests.swift; sourceTree = "<group>"; };
+		61D0E88F2AF8411F00711B63 /* PriceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 			children = (
 				615E59EC2AF0BDFC00136D68 /* Meal.swift */,
 				615E59EE2AF0BE1000136D68 /* MealCategory.swift */,
+				61D0E88F2AF8411F00711B63 /* PriceType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				61995A742AEF8CCE0085723F /* TheMealDBTests.swift */,
+				61D0E88B2AF833C500711B63 /* PriceGeneratorTests.swift */,
 			);
 			path = TheMealDBTests;
 			sourceTree = "<group>";
@@ -383,6 +389,7 @@
 				61D0E8812AF3017200711B63 /* Optionable.swift in Sources */,
 				61995A652AEF8CCD0085723F /* TheMealDB.xcdatamodeld in Sources */,
 				61D0E8782AF2C6DA00711B63 /* OptionsView.swift in Sources */,
+				61D0E8902AF8411F00711B63 /* PriceType.swift in Sources */,
 				615E59ED2AF0BDFC00136D68 /* Meal.swift in Sources */,
 				615E59EF2AF0BE1000136D68 /* MealCategory.swift in Sources */,
 				61D0E87C2AF3009B00711B63 /* TMButton.swift in Sources */,
@@ -404,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61995A752AEF8CCE0085723F /* TheMealDBTests.swift in Sources */,
+				61D0E88C2AF833C500711B63 /* PriceGeneratorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

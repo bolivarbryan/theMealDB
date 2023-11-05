@@ -35,7 +35,7 @@ class GridCollectionViewCell: UICollectionViewCell {
         didSet {
             guard let meal = meal else { return }
             cellImageView.kf.setImage(with: URL(string: meal.thumbnail))
-            mealPriceLabel.text = "$50"
+            mealPriceLabel.text = "$\(meal.price)"
         }
     }
     
