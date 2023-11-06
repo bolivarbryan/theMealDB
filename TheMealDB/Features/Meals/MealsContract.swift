@@ -14,6 +14,7 @@ protocol PresenterToViewMealsProtocol {
     func reloadCategoriesSection(with categories: [MealCategory])
     func presentError(_ error: TheMovieAPIError)
     func reloadMeals(with meals: [Meal])
+    func didAddMealToCart()
 }
 
 
@@ -26,6 +27,7 @@ protocol ViewToPresenterMealsProtocol {
     
     func fetchCategories()
     func selectCategory(_ category: String)
+    func addMealToCart(meal: Meal)
 }
 
 
@@ -36,6 +38,7 @@ protocol PresenterToInteractorMealsProtocol {
  
     func fetchCategories()
     func fetchMeals(_ category: String)
+    func addMealToCart(meal: Meal)
 }
 
 
@@ -44,6 +47,7 @@ protocol InteractorToPresenterMealsProtocol {
     func didFetchCategories(categories: [MealCategory])
     func didFailFetchingCategories(with error: TheMovieAPIError)
     func didFetchMeals(meals: [Meal])
+    func didAddMealToCart()
 }
 
 

@@ -23,9 +23,14 @@ class MealsPresenter: ViewToPresenterMealsProtocol, ObservableObject {
         interactor?.fetchMeals(category)
     }
     
+    func addMealToCart(meal: Meal) {
+        interactor?.addMealToCart(meal: meal)
+    }
+    
 }
 
 extension MealsPresenter: InteractorToPresenterMealsProtocol {
+    
     func didFetchCategories(categories: [MealCategory]) {
         view?.reloadCategoriesSection(with: categories)
     }
@@ -38,4 +43,7 @@ extension MealsPresenter: InteractorToPresenterMealsProtocol {
         view?.reloadMeals(with: meals)
     }
     
+    func didAddMealToCart() {
+        view?.didAddMealToCart()
+    }
 }

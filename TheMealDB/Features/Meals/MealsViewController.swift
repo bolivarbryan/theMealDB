@@ -104,6 +104,10 @@ extension MealsViewController: PresenterToViewMealsProtocol {
         self.meals = meals
         gridCollectionView.reloadData()
     }
+    
+    func didAddMealToCart() {
+        
+    }
 }
 
 extension MealsViewController: PickerViewDelegate {
@@ -126,6 +130,7 @@ extension MealsViewController: UICollectionViewDataSource {
             return UICollectionViewCell(frame: .zero)
         }
         cell.meal = meals[indexPath.row]
+        cell.delegate = self
         return cell
     }
 }
@@ -133,5 +138,7 @@ extension MealsViewController: UICollectionViewDataSource {
 extension MealsViewController: GridCollectionViewCellDelegate {
     func didPressAddToCart(with meal: Meal) {
         //TODO: Cart Feature
+        print("--> ADDED MEAL", meal.name, "To Cart")
+        presenter?.addMealToCart(meal: meal)
     }
 }

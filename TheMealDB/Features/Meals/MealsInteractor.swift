@@ -55,7 +55,7 @@ class MealsInteractor: PresenterToInteractorMealsProtocol {
                         return
                     }
                     
-                    var meals = mealsResponse.meals.map { meal in
+                    let meals = mealsResponse.meals.map { meal in
                         var mealWithCategory = meal
                         mealWithCategory.category = currentCategory
                         
@@ -83,6 +83,12 @@ class MealsInteractor: PresenterToInteractorMealsProtocol {
                 }
             }
         }
+    }
+    
+    func addMealToCart(meal: Meal) {
+        // store meal, confirm storage
+        CartManager.addMeal(meal)
+        presenter?.didAddMealToCart()
     }
 }
 

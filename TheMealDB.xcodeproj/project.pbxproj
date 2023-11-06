@@ -38,6 +38,7 @@
 		61D0E88C2AF833C500711B63 /* PriceGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0E88B2AF833C500711B63 /* PriceGeneratorTests.swift */; };
 		61D0E8902AF8411F00711B63 /* PriceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0E88F2AF8411F00711B63 /* PriceType.swift */; };
 		61D0E8932AF9400000711B63 /* PricingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0E8922AF9400000711B63 /* PricingManager.swift */; };
+		61D0E8952AF9767B00711B63 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0E8942AF9767B00711B63 /* CartManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		61D0E88B2AF833C500711B63 /* PriceGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceGeneratorTests.swift; sourceTree = "<group>"; };
 		61D0E88F2AF8411F00711B63 /* PriceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceType.swift; sourceTree = "<group>"; };
 		61D0E8922AF9400000711B63 /* PricingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricingManager.swift; sourceTree = "<group>"; };
+		61D0E8942AF9767B00711B63 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +220,7 @@
 		61D0E8792AF3008600711B63 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				61D0E8912AF93FE600711B63 /* Databse */,
+				61D0E8912AF93FE600711B63 /* Database */,
 				615E59EB2AF0BDE900136D68 /* Models */,
 				61D0E87F2AF3016500711B63 /* Protocols */,
 				61D0E87A2AF3008A00711B63 /* Components */,
@@ -245,12 +247,13 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		61D0E8912AF93FE600711B63 /* Databse */ = {
+		61D0E8912AF93FE600711B63 /* Database */ = {
 			isa = PBXGroup;
 			children = (
 				61D0E8922AF9400000711B63 /* PricingManager.swift */,
+				61D0E8942AF9767B00711B63 /* CartManager.swift */,
 			);
-			path = Databse;
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,6 +414,7 @@
 				615E5A002AF0D11000136D68 /* TheMealDBAPI.swift in Sources */,
 				61D0E8872AF52B9500711B63 /* GridCollectionViewCell.swift in Sources */,
 				615E5A072AF0DB5D00136D68 /* TheMovieAPIError.swift in Sources */,
+				61D0E8952AF9767B00711B63 /* CartManager.swift in Sources */,
 				615E59F62AF0BF0F00136D68 /* MealsPresenter.swift in Sources */,
 				615E5A092AF0DB7100136D68 /* CategoriesResponse.swift in Sources */,
 				61D0E8762AF2C28400711B63 /* PickerView.swift in Sources */,
