@@ -38,13 +38,13 @@ final class PriceGeneratorTests: XCTestCase {
     func testBeefMealPriceIsHigherThanPork() {
         //GIVEN
         var beef = try! JSONDecoder().decode(Meal.self, from: PriceGeneratorTests.beefMock)
-        var beefCategories = try! JSONDecoder().decode(MealCategory.self, from: PriceGeneratorTests.beefCategoryMock)
-        beefCategories.addMeal(&beef)
+        var beefCategory = try! JSONDecoder().decode(MealCategory.self, from: PriceGeneratorTests.beefCategoryMock)
+        beef.category = beefCategory
         
         //WHEN
         var pork = try! JSONDecoder().decode(Meal.self, from: PriceGeneratorTests.porkMock)
-        var porkCategories = try! JSONDecoder().decode(MealCategory.self, from: PriceGeneratorTests.porkCategoryMock)
-        porkCategories.addMeal(&pork)
+        var porkCategory = try! JSONDecoder().decode(MealCategory.self, from: PriceGeneratorTests.porkCategoryMock)
+        pork.category = porkCategory
         
         //THEN
         XCTAssertTrue(beef.price > pork.price)
@@ -53,13 +53,13 @@ final class PriceGeneratorTests: XCTestCase {
     func testLambMealPriceIsHigherThanPork() {
         //GIVEN
         var lamb = try! JSONDecoder().decode(Meal.self, from: PriceGeneratorTests.lambMock)
-        var lambCategories = try! JSONDecoder().decode(MealCategory.self, from: PriceGeneratorTests.beefCategoryMock)
-        lambCategories.addMeal(&lamb)
+        var lambCategory = try! JSONDecoder().decode(MealCategory.self, from: PriceGeneratorTests.beefCategoryMock)
+        lamb.category = lambCategory
         
         //WHEN
         var pork = try! JSONDecoder().decode(Meal.self, from: PriceGeneratorTests.porkMock)
-        var porkCategories = try! JSONDecoder().decode(MealCategory.self, from: PriceGeneratorTests.porkCategoryMock)
-        porkCategories.addMeal(&pork)
+        var porkCategory = try! JSONDecoder().decode(MealCategory.self, from: PriceGeneratorTests.porkCategoryMock)
+        pork.category = porkCategory
         
         //THEN
         XCTAssertTrue(lamb.price > pork.price)
@@ -68,13 +68,13 @@ final class PriceGeneratorTests: XCTestCase {
     func testLambMealPriceIsHigherThanBeef() {
         //GIVEN
         var lamb = try! JSONDecoder().decode(Meal.self, from: PriceGeneratorTests.lambMock)
-        var lambCategories = try! JSONDecoder().decode(MealCategory.self, from: PriceGeneratorTests.lambCategoryMock)
-        lambCategories.addMeal(&lamb)
+        var lambCategory = try! JSONDecoder().decode(MealCategory.self, from: PriceGeneratorTests.lambCategoryMock)
+        lamb.category = lambCategory
         
         //WHEN
         var beef = try! JSONDecoder().decode(Meal.self, from: PriceGeneratorTests.beefMock)
-        var beefCategories = try! JSONDecoder().decode(MealCategory.self, from: PriceGeneratorTests.beefCategoryMock)
-        beefCategories.addMeal(&beef)
+        var beefCategory = try! JSONDecoder().decode(MealCategory.self, from: PriceGeneratorTests.beefCategoryMock)
+        beef.category = beefCategory
         
         //THEN
         XCTAssertTrue(lamb.price > beef.price)
