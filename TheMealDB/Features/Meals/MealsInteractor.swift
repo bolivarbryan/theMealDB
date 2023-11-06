@@ -58,6 +58,13 @@ class MealsInteractor: PresenterToInteractorMealsProtocol {
                     var meals = mealsResponse.meals.map { meal in
                         var mealWithCategory = meal
                         mealWithCategory.category = currentCategory
+                        
+                        if let price = PricingManager.getPrice(from: mealWithCategory) {
+                            mealWithCategory.price = price
+                        } else {
+                            PricingManager.setPrice(for: mealWithCategory)
+                        }
+                        
                         return mealWithCategory
                     }
                     
