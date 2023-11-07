@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MNn-DA-W2F">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
@@ -19,16 +19,28 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3he-nl-Ib9">
                                 <rect key="frame" x="0.0" y="60" width="393" height="792"/>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="siB-JW-nHe">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="OZL-9G-jah"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3he-nl-Ib9" secondAttribute="trailing" id="FlJ-La-PfE"/>
                             <constraint firstItem="3he-nl-Ib9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KyC-8h-ssA"/>
-                            <constraint firstItem="3he-nl-Ib9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="60" id="SLK-q3-KoQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="siB-JW-nHe" secondAttribute="trailing" id="P1d-JU-leq"/>
                             <constraint firstAttribute="bottom" secondItem="3he-nl-Ib9" secondAttribute="bottom" id="aGo-pK-MrK"/>
+                            <constraint firstItem="siB-JW-nHe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hg9-fy-jBV"/>
+                            <constraint firstItem="siB-JW-nHe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="j42-IC-QJF"/>
+                            <constraint firstItem="3he-nl-Ib9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="1" id="obD-7g-MqQ"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <tabBarItem key="tabBarItem" title="Meals" image="fork.knife" catalog="system" id="f7f-LI-nwK"/>
                     <navigationItem key="navigationItem" id="yX6-0M-fY1"/>
                     <connections>
                         <outlet property="verticalStackView" destination="3he-nl-Ib9" id="vvf-FA-JfB"/>
@@ -36,12 +48,70 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1991.6030534351144" y="-2.1126760563380285"/>
+        </scene>
+        <!--Cart View Controller-->
+        <scene sceneID="w14-Z6-C2q">
+            <objects>
+                <viewController id="pAE-6P-qki" customClass="CartViewController" customModule="TheMealDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NWP-6h-iEr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="FkW-2s-yn5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pnu-Ry-i5g"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cZ6-LV-ujD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2918.320610687023" y="733.80281690140851"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="AJZ-K3-2Ew">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="MNn-DA-W2F" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2xW-d2-foe">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.79215686269999996" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="kFG-FY-lDn"/>
+                        <segue destination="Kst-lq-TYv" kind="relationship" relationship="viewControllers" id="PSH-wz-d1B"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XBK-Nb-BzF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="1064.885496183206" y="-2.1126760563380285"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="9nn-90-UF7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kst-lq-TYv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" id="Epx-Bi-tVr"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GQ2-ZV-xN7">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pAE-6P-qki" kind="relationship" relationship="rootViewController" id="r7u-Q5-IvC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eij-lG-4A2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1991.6030534351144" y="733.80281690140851"/>
         </scene>
     </scenes>
     <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="fork.knife" catalog="system" width="94" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

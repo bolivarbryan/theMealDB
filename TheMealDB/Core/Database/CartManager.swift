@@ -63,7 +63,7 @@ struct CartManager {
             if let mealObject = result.first {
                 let count = mealObject.value(forKey: "quantity") as! Int
                 
-                if count == 0 {
+                if count == 1 {
                     context.delete(mealObject)
                     print("Deleted Meal")
                 } else {
@@ -77,7 +77,7 @@ struct CartManager {
         }
     }
 
-    static func getMeals() -> [Meal] {
+    static func getMeals() -> [MealItem] {
         let context = PricingManager.appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CartItem")
         request.returnsObjectsAsFaults = false
@@ -85,10 +85,13 @@ struct CartManager {
             let result = try context.fetch(request) as! [NSManagedObject]
             print("DidFetch Cart")
             return result.map { object in
-                let meal = Meal(id: object.value(forKey: "mealId") as! String,
+                var meal = Meal(id: object.value(forKey: "mealId") as! String,
                                 name: object.value(forKey: "name") as! String,
                                 thumbnail: object.value(forKey: "thumbnail") as! String)
-                return meal
+                meal.price = object.value(forKey: "mealPrice") as! Int
+                let quantity = object.value(forKey: "quantity") as! Int
+                var mealItem = MealItem(meal: meal, quantity: quantity)
+                return mealItem
             }
         } catch {
             print("Failed")
@@ -109,6 +112,21 @@ struct CartManager {
         } catch {
             print("Failed")
             return false
+        }
+    }
+    
+    static func clearCart() {
+        let context = PricingManager.appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CartItem")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request) as! [NSManagedObject]
+            for object in result {
+                context.delete(object)
+            }
+            try context.save()
+        } catch {
+            print("Failed")
         }
     }
     

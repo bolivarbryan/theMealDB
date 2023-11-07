@@ -34,12 +34,14 @@ class MealsViewController: UIViewController {
         super.viewDidLoad()
         configureModule()
         title = "TMDB"
+        addCategoriesPicker()
+        addCollectionView()
+        configureNavigationBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        addCategoriesPicker()
-        addCollectionView()
+
     }
     
     func addCategoriesPicker() {
@@ -81,6 +83,18 @@ class MealsViewController: UIViewController {
         presenter?.interactor = MealsInteractor()
         presenter?.view = self
         presenter?.interactor?.presenter = presenterObject
+    }
+    
+    func configureNavigationBar() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .systemYellow
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
 }
 

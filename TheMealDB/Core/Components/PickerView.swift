@@ -67,7 +67,8 @@ class PickerView: UIView {
         let button = TMButton(title: "Today I would like to have",
              style: .header)
         button.addTarget(self, action: #selector(displayOptions), for: .touchUpInside)
-        button.backgroundColor = .yellow
+        button.backgroundColor = .systemYellow
+        button.setImage(UIImage(systemName: "arrowtriangle.down.circle.fill"), for: .normal)
         return button
     }
     
